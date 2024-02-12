@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/static_pages/index', to: 'static_pages#index'
   get '/static_pages/team', to: 'static_pages#team'
   get '/static_pages/contact', to: 'static_pages#contact'
+  get '/dynamic_pages/welcome/:first_name', to: 'dynamic_pages#welcome'
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
