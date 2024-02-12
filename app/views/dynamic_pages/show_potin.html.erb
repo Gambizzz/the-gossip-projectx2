@@ -1,0 +1,14 @@
+
+  <div class="card" style="width: 18rem;">
+    <div class="card-header">
+      <%= @this_gossip.user.first_name %>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Titre : <%= @this_gossip.title %></h5>
+      <p class="card-text">Contenu : <%= @this_gossip.content %></p>
+      <p class="card-text">Date de création : <%= @this_gossip.created_at %></p>
+    </div>
+  </div>
+
+
+  #Accéder à la page : http://localhost:3000/dynamic_pages/show_potin/1 (1 = id gossip)

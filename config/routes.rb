@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get '/static_pages/team', to: 'static_pages#team'
   get '/static_pages/contact', to: 'static_pages#contact'
   get '/dynamic_pages/welcome/:first_name', to: 'dynamic_pages#welcome'
-  
+  get '/dynamic_pages/home', to: 'dynamic_pages#home'
+  get '/dynamic_pages/show_potin/:id', to: 'dynamic_pages#show_potin'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
