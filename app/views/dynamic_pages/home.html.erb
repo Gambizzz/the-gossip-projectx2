@@ -11,6 +11,7 @@
         <div class="card-body">
           <h5 class="card-title"><%= gossip.id %> . <%= gossip.title %></h5>
           <p class="card-text">Voici l'auteur du gossip : <%= gossip.user.first_name %></p>
+          <%= link_to "Voir le potin", {controller: "dynamic_pages", action: "show_potin", id: gossip.id}, class: "btn btn-primary mt-3" %>
         </div>
       </div>
     <% end %>

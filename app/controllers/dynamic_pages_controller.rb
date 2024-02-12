@@ -10,7 +10,8 @@ class DynamicPagesController < ApplicationController
   def show_potin
     @this_gossip = Gossip.find(params[:id])
   end
+
+  def show_author
+    @user = User.find(params[:id])
+  end
 end
-
-
-#lancer la page : http://127.0.0.1:3000/dynamic_pages/welcome/Anelise  (Anelise = le prenom)
