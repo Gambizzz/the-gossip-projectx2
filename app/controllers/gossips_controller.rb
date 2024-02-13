@@ -11,9 +11,11 @@ class GossipsController < ApplicationController
       'content' => params[:content],
       'user' => user
     )
-    if @gossip.save # essaie de sauvegarder en base @gossip
+    if @gossip.save
+      #flash[:success] = "Ton potin est sauvegardé"
       redirect_to '/dynamic_pages/home'
     else
+      #flash[:error] = "Impossible de sauvegarder ton potin"
       render '/gossips/new'
     end
   end
