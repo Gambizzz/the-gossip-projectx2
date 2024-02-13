@@ -6,6 +6,5 @@
       <h5 class="card-title">Titre : <%= @this_gossip.title %></h5>
       <p class="card-text">Contenu : <%= @this_gossip.content %></p>
       <p class="card-text">Date de création : <%= @this_gossip.created_at %></p>
-      <%= link_to "Voir l'auteur", {controller: "dynamic_pages", action: "show_author", id: "@user.id"}, class: "btn btn-primary mt-3" %>
-   </div>
+      <%= link_to "Voir l'auteur", {controller: "dynamic_pages", action: "show_author", id: @this_gossip.user.id}, class: "btn btn-primary mt-3" %>   </div>
   </div>

@@ -12,6 +12,7 @@ class DynamicPagesController < ApplicationController
   end
 
   def show_author
-    @user = User.find(params[:id])
+    user_id = params[:id]
+    @user = User.find(user_id)
   end
 end
