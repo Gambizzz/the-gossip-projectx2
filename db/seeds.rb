@@ -35,7 +35,7 @@ end
     content:Faker::TvShows::BigBangTheory.quote,
   )
   m +=1
-  puts "20 gosspis ont été créés !"
+  puts "20 gossips ont été créés !"
 end
 
 10.times do |t|

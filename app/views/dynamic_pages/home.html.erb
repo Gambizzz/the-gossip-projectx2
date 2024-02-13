@@ -1,20 +1,31 @@
 <html>
-  <head>
-    <title> The Gossip Project </title>
-  </head>
+ 
   <body>
-    <h1> Bienvenue sur mon super site de potins ! </h1>
-    
-    <h2><u> Voici la liste de tous les potins :</u></h2>
-    <% @gossips.each do |gossip| %>
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title"><%= gossip.id %> . <%= gossip.title %></h5>
-          <p class="card-text">Voici l'auteur du gossip : <%= gossip.user.first_name %></p>
-          <%= link_to "Voir le potin", {controller: "dynamic_pages", action: "show_potin", id: gossip.id}, class: "btn btn-primary mt-3" %>
-        </div>
+  <div class="jumbotron-hero">
+    <div class="container text-center" >
+      <h1> THE GOSSIP PROJECT </h1>
+      <p> Bienvenue sur notre super site de potins ! </p>
+      <%= link_to 'Créer un potin', {controller: "gossips", action: "new"}, class: "btn btn-danger mt-3" %>
+    </div>
+  </div>
+
+    <div class="container-fluid">
+      <h2>Voici la liste de tous les potins :</h2>
+	    <div class="row">
+      <% @ordered_gossips = @gossips.order(:id) %>
+        <% @ordered_gossips.each do |gossip| %>
+          <div class= "col-4 col-sm-4 col-md-4 col-lg-4 mt-5 text-center" > 
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title"><%= gossip.id %> . <%= gossip.title %></h5>
+                <p class="card-text">Auteur : <%= gossip.user.first_name %></p>
+                <%= link_to "Voir le potin", {controller: "dynamic_pages", action: "show_potin", id: gossip.id}, class: "btn btn-outline-danger mt-3" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
   <body>
 </html>
 
